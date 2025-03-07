@@ -70,29 +70,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       $(document).ready(function(){
+        console.log("started JavaScript");
         // do this when click on the clicktoreveal1 button
       $("#clicktoreveal1").click(function() {
         // run this when I click on this button
+        console.log("clicked on the first button");
         $("#div_ctrl1").html("Giants");
       });
       // do this when click on the clicktoreveal2 button
       $("#clicktoreveal2").click(function() {
         // run this when I click on this button
+        console.log("clicked on the 2nd button");
         $("#div_ctrl2").html("49ers");
       });
         // do this when click on the clicktoreveal3 button
       $("#clicktoreveal3").click(function() {
         // run this when I click on this button
+        console.log("clicked on the 3rd button");
         $("#div_ctrl3").html("Kings");
       });
         // do this when click on the clicktoreveal4 button
       $("#clicktoreveal4").click(function() {
         // run this when I click on this button
+        console.log("clicked on the 4th button");
         $("#div_ctrl4").html("Sharks");
       });
       
       // toggle the photo on and off  
         $("#togglephoto").click(function() {
+          console.log("clicked on the toggle photo button");
           $("#Mount_Whitney_Hike").fadeToggle(1000, "linear");
         });
       });
