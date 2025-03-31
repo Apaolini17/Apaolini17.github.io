@@ -26,17 +26,18 @@
         var marker = L.marker([39.73945, -105.00578]).addTo(map).bindPopup("<b>Colab Apartments.</b><br>This is where I live.");
         var circle = L.circle([39.744081, -105.001327], {
           color: 'red',
-          fillColor: '#1aff00',
+          fillColor: '#ed2b25',
           fillOpacity: 0.5,
           radius: 100
         }).addTo(map);
         var polygon = L.polygon([
-          [39.745497, -105.006587],
-          [39.745885, -105.005731],
-          [39.74494, -105.005023],
-          [39.744596, -105.005895]
+          [39.741869, -105.008751],
+          [39.742071, -105.008912],
+          [39.741742, -105.009642],
+          [39.741525, -105.009486]
         ]).addTo(map);
         circle.bindPopup("This is where a majority of my classes are as I am a Geography major.");
+        polygon.bindPopup("This is also where I have some classes for my Business minor.");
         var popup = L.popup();
         function onMapClick(e) {
           popup
