@@ -30,16 +30,17 @@
           fillOpacity: 0.5,
           radius: 100
         }).addTo(map);
-       var polygon = L.polygon([
-  [39.741869, -105.008751],
-  [39.742071, -105.008912],
-  [39.741742, -105.009642],
-  [39.741525, -105.009486]
-]).addTo(map)
-  .bindPopup("This is also where I have some classes for my Business minor.")
-  .on('click', function (e) {
-    this.openPopup();
-  });
+        var polygon = L.polygon([
+          [39.741869, -105.008751],
+          [39.742071, -105.008912],
+          [39.741742, -105.009642],
+          [39.741525, -105.009486]
+        ]).addTo(map);
+        circle.bindPopup("This is where a majority of my classes are as I am a Geography major.");
+        polygon.bindPopup("This is also where I have some classes for my Business minor.");
+        var popup = L.popup();
+        function onMapClick(e) {
+          popup
           .setLatLng(e.latlng)
           .setContent("You clicked the map at " + e.latlng.toString())
           .openOn(map);
