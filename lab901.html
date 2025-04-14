@@ -71,7 +71,7 @@
 		function style1(feature) {
 			d = feature.properties.COMMUTE_60_TO_PLUS;
 			answer = d > 60 ? '#993404' :
-			d > 45 ? '##d95f0e' :
+			d > 45 ? '#d95f0e' :
 			d > 30 ? '#fe9929' :
 			d > 15 ? '#fed98e' :
 			d > 0 ? '#ffffd4' :
@@ -91,7 +91,7 @@
 		$.getJSON('./acs_denver_2021.geojson', function(data) {
 			acsDenver2021Layer = L.geoJSON(data,
 			{style: style1, onEachFeature: function(feature,layer) {
-				layer.bindPopup("Commute Time: " + feature.properties.COMMUTE_60_TO_PLUS);
+				layer.bindPopup(`Average Commute Time: <strong>${feature.properties.COMMUTE_60_TO_PLUS} minutes</strong>`);
 			}}).addTo(map);
 			map.panTo(acsDenver2021Layer.getBounds().getCenter());
 			layerControl.addOverlay(acsDenver2021Layer, "Census 2021");
