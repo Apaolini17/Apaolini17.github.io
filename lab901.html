@@ -70,11 +70,11 @@
     
 		function style1(feature) {
 			d = feature.properties.COMMUTE_60_TO_PLUS;
-			answer = d > 60 ? '#993404' :
-			d > 45 ? '#d95f0e' :
-			d > 30 ? '#fe9929' :
-			d > 15 ? '#fed98e' :
-			d > 0 ? '#ffffd4' :
+			answer = d > 180 ? '#993404' :
+			d > 150 ? '#d95f0e' :
+			d > 120 ? '#fe9929' :
+			d > 90 ? '#fed98e' :
+			d > 60 ? '#ffffd4' :
 			'#edf8fb';
 			styleReturn = {
 			fillColor : answer,
