@@ -91,7 +91,7 @@
 		$.getJSON('./acs_denver_2021.geojson', function(data) {
 			acsDenver2021Layer = L.geoJSON(data,
 			{style: style1, onEachFeature: function(feature,layer) {
-				layer.bindPopup("Median Age: " + feature.properties.MEDIAN_AGE_ALL);
+				layer.bindPopup("Commute Time: " + feature.properties.MEDIAN_AGE_ALL);
 			}}).addTo(map);
 			map.panTo(acsDenver2021Layer.getBounds().getCenter());
 			layerControl.addOverlay(acsDenver2021Layer, "Census 2021");
