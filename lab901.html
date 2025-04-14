@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>Lab 9 - Denver Neighborhood Commute Time 0-60+</title>
+	<title>Lab 9 - Denver Neighborhood Commute Times 0-60+</title>
 	
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -69,12 +69,12 @@
     // define a function to desing my cloropleth map 
     
 		function style1(feature) {
-			d = feature.properties.AGE_10_TO_14;
-			answer = d > 14 ? '#993404' :
-			d > 13 ? '#d95f0e' :
-			d > 12 ? '#fe9929' :
-			d > 11 ? '#fed98e' :
-			d > 10 ? '#ffffd4' :
+			d = feature.properties.COMMUTE_60_TO_PLUS;
+			answer = d > 60 ? '#993404' :
+			d > 45 ? '#d95f0e' :
+			d > 30 ? '#fe9929' :
+			d > 15 ? '#fed98e' :
+			d > 0 ? '#ffffd4' :
 			'#edf8fb';
 			styleReturn = {
 			fillColor : answer,
@@ -91,7 +91,7 @@
 		$.getJSON('./acs_denver_2021.geojson', function(data) {
 			acsDenver2021Layer = L.geoJSON(data,
 			{style: style1, onEachFeature: function(feature,layer) {
-				layer.bindPopup("Age: " + feature.properties.AGE_10_TO_14);
+				layer.bindPopup("Commute Time: " + Math.round(feature.properties.COMMUTE_60_TO_PLUS) + " min");
 			}}).addTo(map);
 			map.panTo(acsDenver2021Layer.getBounds().getCenter());
 			layerControl.addOverlay(acsDenver2021Layer, "Census 2021");
