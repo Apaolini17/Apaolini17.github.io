@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>Final Project- Sacramento </title>
+	<title>Final Project- Sacramento Housing Units </title>
 	
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -111,7 +111,7 @@
 			{style: style1, onEachFeature: function(feature,layer) {
 				layer.bindPopup("Housing Units: " + feature.properties.Housing_Units);
 			}}).addTo(map);
-			map.panTo(Sacramento2020Layer.getBounds().getCenter());
+			map.fitBounds(Sacramento2020Layer.getBounds());
 			layerControl.addOverlay(Sacramento2020Layer, "Census 2020");
 			});
 		
