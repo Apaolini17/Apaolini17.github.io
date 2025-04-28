@@ -91,8 +91,8 @@
 			answer = d > 2500 ? '#006d2c' :
 			d > 2000 ? '#2ca25f' :
 			d > 1500 ? '#66c2a4' :
-			d > 1000 ? '#b2e2e2' :
-			d > 500 ? '#edf8fb' :
+			d > 1000 ? '#99d8c9' :
+			d > 500 ? '#ccece6' :
 			'#edf8fb';
 			styleReturn = {
 			fillColor : answer,
@@ -127,7 +127,7 @@
 	var div = L.DomUtil.create('div', 'info legend');
 		colors = ['#edf8fb','#ccece6','#99d8c9' ,'#66c2a4','#2ca25f','#006d2c'];
 		labels = ['0 - 500', '501 - 1000 ', '1001 - 1500', '1501 - 2000', '2001 - 2500', '2501+'];
-	div.innerHTML = '<h2>Commute Time</h2>';
+	div.innerHTML = '<h2>Housing Units</h2>';
 	for (var i = 0; i < colors.length; i++) {
 		div.innerHTML += '<i style="background:' + colors[i] + '"></i> ' + labels[i] +
 		'<br>';
